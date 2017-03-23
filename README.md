@@ -1,12 +1,17 @@
 # HostsTool
 
-Python 2.7
+Python 2.7 
 
 Usage:
 ```
-python HostsTool.py
+python HostsTool.py update
+python HostsTool.py flush
 ```
 
-在windows下使用，替换Hosts文件
+在windows下使用：
 
-使用项目：https://github.com/racaljk/hosts
+1. 替换Hosts文件(可科学上网)
+
+    使用项目：https://github.com/racaljk/hosts
+
+2. 清空Hosts文件
