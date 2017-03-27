@@ -1,6 +1,6 @@
 # HostsTool
 
-Python 2.7 
+Python 2.7 & 3.5
 
 Usage:
 ```
