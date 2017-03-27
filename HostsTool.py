@@ -15,9 +15,9 @@ host_file = os.path.join(systemroot,'system32\drivers\etc\hosts')
 host_file_bak = host_file + "_" + str(int(time.time()))+".bak"
 
 def usage():
-	  print "Usage:"
-	  print "%s update" %sys.argv[0].split('\\')[-1]
-	  print "%s flush" %sys.argv[0].split('\\')[-1]
+    print "Usage:"
+    print "%s update" %sys.argv[0].split('\\')[-1]
+    print "%s flush" %sys.argv[0].split('\\')[-1]
 	  
 def down_host():
     host_data = urllib2.urlopen(hosts_url).read()
