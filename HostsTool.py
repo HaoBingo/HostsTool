@@ -26,14 +26,16 @@ def down_host():
     print "Hosts update successfully !"
     
 def backup_host():
-    try:
-        os.rename(host_file, host_file_bak)
+    if os.path.exists(host_file):
+        try:
+            os.rename(host_file, host_file_bak)
+            return True
+        except:
+            print "Hosts update failed !"
+            print "Check %s" %(os.path.join(systemroot,'system32\drivers\etc'))
+            return False
+    else:
         return True
-    except Exception:
-        print "Hosts update failed !"
-        print "Check %s" %(os.path.join(systemroot,'system32\drivers\etc'))
-        #print Exception
-        return False
         
 def update_host():
     if backup_host():
@@ -44,15 +46,19 @@ def flush_host():
         with open(host_file,'w')as f:
         	   f.write('')
         print "Host flush successfully !"
+        
+def flush_dns():
+	  os.system("ipconfig/flushdns")
 
 def main():
     if(len(sys.argv) == 2):
-    	  if(sys.argv[1] == 'update'):
-    	      update_host()
-    	  if(sys.argv[1] == 'flush'):
+        if(sys.argv[1] == 'update'):
+            update_host()
+    	if(sys.argv[1] == 'flush'):
             flush_host()
+        flush_dns()
     else:
-    	  usage()
+        usage()
         
 
 if __name__ == "__main__":
