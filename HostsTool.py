@@ -59,7 +59,7 @@ def main():
         flush_dns()
     else:
         usage()
-        
+    os.system("pause")
 
 if __name__ == "__main__":
     main()
